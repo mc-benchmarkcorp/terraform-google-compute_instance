@@ -38,9 +38,3 @@ variable "tags" {
     description = "the network to host host compute instances"
     default = "default"
 }
-
-variable "startup-script" {
-  type = string
-  description = "Name of the startup Script"
-  default = ""
-}
