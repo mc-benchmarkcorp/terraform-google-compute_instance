@@ -3,3 +3,4 @@ terraform {
   required_providers {
     google = ">= 3.43, <4.0"
   }
+  }
