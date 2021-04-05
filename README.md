@@ -26,8 +26,9 @@ See the [simple](https://github.com/terraform-google-modules/terraform-google-vm
 
 | Name | Description |
 |------|-------------|
-| available\_zones | List of available zones in region |
-| instances\_details | List of all details for compute instances |
-| instances\_self\_links | List of self-links for compute instances |
+| name | List of available zones in region |
+| instance_zone | List of all details for compute instances |
+| subnet_name | List of self-links for compute instances |
+| instance_ip_addr | List of self-links for compute instances |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
