@@ -1,49 +1,46 @@
-variable "network" {
-  description = "Network to deploy to. Only one of network or subnetwork should be specified."
-  default     = ""
+variable "name_prefix" {
+  type = string
+  description = "Machine prefix"
+}
+
+variable "amount" {
+  type        = string
+  description = "the amount of comute nodes to create"
+  default     = 1
+}
+
+variable "machine_type" { 
+    type = string
+    description = "machine size"
+    default = "n1-standard-1"
+}
+
+variable "zone" {
+  type = string
+  description = "Zone ot deploy the machine in"
+  default = "us-east1-b"
+}
+
+variable "image" {
+    type = string
+    description = "OS image to use for compute instance"
+    default = "ubuntu-1904-disco-v20191019"
 }
 
 variable "subnetwork" {
-  description = "Subnet to deploy to. Only one of network or subnetwork should be specified."
-  default     = ""
+    type = string
+    description = "the network to host host compute instances"
+    default = "default"
 }
 
-variable "subnetwork_project" {
-  description = "The project that subnetwork belongs to"
-  default     = ""
+variable "tags" {
+    type = string
+    description = "the network to host host compute instances"
+    default = "default"
 }
 
-variable "hostname" {
-  description = "Hostname of instances"
-  default     = ""
-}
-
-variable "static_ips" {
-  type        = list(string)
-  description = "List of static IPs for VM instances"
-  default     = []
-}
-
-variable "access_config" {
-  description = "Access configurations, i.e. IPs via which the VM instance can be accessed via the Internet."
-  type = list(object({
-    nat_ip       = string
-    network_tier = string
-  }))
-  default = []
-}
-
-variable "num_instances" {
-  description = "Number of instances to create. This value is ignored if static_ips is provided."
-  default     = "1"
-}
-
-variable "instance_template" {
-  description = "Instance template self_link used to create compute instances"
-}
-
-variable "region" {
-  type        = string
-  description = "Region where the instances should be created."
-  default     = null
+variable "startup-script" {
+  type = string
+  description = "Name of the startup Script"
+  default = ""
 }
