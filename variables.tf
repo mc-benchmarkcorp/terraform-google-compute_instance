@@ -29,6 +29,12 @@ variable "image" {
 
 variable "subnetwork" {
     type = string
+    description = "the subnetwork to host host compute instances"
+    default = "default"
+}
+
+variable "network" {
+    type = string
     description = "the network to host host compute instances"
     default = "default"
 }
