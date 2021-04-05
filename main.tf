@@ -1,6 +1,6 @@
 
 resource "google_compute_instance" "default" {
-  project.     = var.project
+  project      = var.project
   count        = var.amount
   name         = "${var.name_prefix}-${count.index+1}"
   machine_type = var.machine_type
