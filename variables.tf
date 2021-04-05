@@ -41,7 +41,6 @@ variable "tags" {
 
 variable "project" {
     type = string
-    description = "the network to host host compute instances"
-    default = "default"
+    description = "the gcp project to use."
 }
 
