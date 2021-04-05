@@ -38,3 +38,10 @@ variable "tags" {
     description = "the network to host host compute instances"
     default = "default"
 }
+
+variable "project" {
+    type = string
+    description = "the network to host host compute instances"
+    default = "default"
+}
+
