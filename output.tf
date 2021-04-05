@@ -1,14 +1,16 @@
-output "instances_self_links" {
-  description = "List of self-links for compute instances"
-  value       = google_compute_instance_from_template.compute_instance.*.self_link
+  
+output "name" {
+    value = google_compute_instance.default.*.name
+    description = "The names of the instance being created"
 }
-
-output "instances_details" {
-  description = "List of all details for compute instances"
-  value       = google_compute_instance_from_template.compute_instance.*
+output "instance_zone" {
+    value = google_compute_instance.default.*.zone
+    description = "The zone where the instance will be created"
 }
-
-output "available_zones" {
-  description = "List of available zones in region"
-  value       = data.google_compute_zones.available.names
+output "subnet_name" {
+    value = google_compute_instance.default[*].network_interface.subnetwork
+    description = "The names of the subnetwork the instances will be located"
 }
+output "instance_ip_addr" {
+  value = google_compute_instance.default[*].network_interface.0.access_config.0.nat_ip
+} 
